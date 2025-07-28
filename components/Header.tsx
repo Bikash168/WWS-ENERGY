@@ -44,13 +44,17 @@ const Header = () => {
         <header className="w-full bg-white shadow-md fixed top-0 z-50">
             <div className="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center md:px-8">
                 {/* Logo */}
-                <div className="flex items-center gap-3">
+                <div className="relative h-8 sm:h-10 md:h-12 lg:h-14 w-20 sm:w-24 md:w-28 lg:w-32">
                     <Image
                         src="/logo.png"
                         alt="WWS Energy"
-                        className="h-6 sm:h-8 md:h-12 lg:h-16 w-auto"
+                        fill
+                        className="object-contain"
                     />
                 </div>
+
+
+
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex space-x-6 text-blue-900 text-sm md:text-base font-medium">
