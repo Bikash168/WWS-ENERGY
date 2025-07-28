@@ -27,8 +27,8 @@ export default function WhoWeAre() {
           transition={{ delay: 0.2, duration: 0.7 }}
         >
           We are a collective of engineers, innovators, and energy enthusiasts with a singular mission:
-          to make clean, renewable power accessible and affordable for all. At WWS Energy, we don’t just
-          work with technology — we work with purpose.
+          to make clean, renewable power accessible and affordable for all. At WWS Energy, we don&apos;t just
+          work with technology &mdash; we work with purpose.
         </motion.p>
 
         <motion.p
@@ -38,7 +38,7 @@ export default function WhoWeAre() {
           transition={{ delay: 0.3, duration: 0.7 }}
         >
           Our team is driven by innovation, resilience, and a firm belief that a carbon-free future
-          isn’t just possible — it’s essential. Whether it's harnessing solar, wind, or hydrogen power,
+          isn&apos;t just possible &mdash; it&apos;s essential. Whether it&apos;s harnessing solar, wind, or hydrogen power,
           we design systems that are smarter, cleaner, and built for communities that need them most.
         </motion.p>
 
@@ -49,7 +49,7 @@ export default function WhoWeAre() {
           transition={{ delay: 0.4, duration: 0.7 }}
         >
           Together, we envision a planet where energy is equitable, innovation is inclusive, and
-          sustainability is the standard. We're not waiting for change — we're engineering it.
+          sustainability is the standard. We&apos;re not waiting for change &mdash; we&apos;re engineering it.
         </motion.p>
       </motion.div>
     </section>
