@@ -45,7 +45,7 @@ const Header = () => {
             <div className="max-w-screen-xl mx-auto px-4 py-3 flex justify-between items-center md:px-8">
                 {/* Logo */}
                 <div className="flex items-center gap-3">
-                    <img
+                    <Image
                         src="/logo.png"
                         alt="WWS Energy"
                         className="h-6 sm:h-8 md:h-12 lg:h-16 w-auto"
