@@ -24,12 +24,7 @@ const Hero: React.FC = () => {
         <p className="text-white text-lg md:text-xl max-w-2xl mb-6">
           Join us on the journey to a greener, cleaner tomorrow with innovative energy solutions.
         </p>
-        <a
-          href="#about"
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg transition duration-300"
-        >
-          Learn More
-        </a>
+        
       </div>
     </section>
   );
