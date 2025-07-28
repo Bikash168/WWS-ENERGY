@@ -17,10 +17,16 @@ const Header = () => {
                         Home
                     </a>
                     <a href="#about" className="hover:text-blue-700 transition duration-200">
-                        About
+                        What we do
                     </a>
                     <a href="#contact" className="hover:text-blue-700 transition duration-200">
-                        Contact
+                        What we think
+                    </a>
+                    <a href="#contact" className="hover:text-blue-700 transition duration-200">
+                        Who we are
+                    </a>
+                    <a href="#contact" className="hover:text-blue-700 transition duration-200">
+                        Contact Us
                     </a>
                 </nav>
 
