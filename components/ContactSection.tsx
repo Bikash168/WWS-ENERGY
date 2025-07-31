@@ -1,67 +1,115 @@
 'use client';
 
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 
-const ContactSection = () => {
-  useEffect(() => {
-    AOS.init({ once: true });
-  }, []);
+export default function ContactPage() {
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // You can add backend integration here
+    alert('Form submitted successfully!');
+  };
 
   return (
     <section
       id="contact"
-      className="py-24 bg-blue-950 text-white px-4 md:px-12"
+      className="relative z-10 py-20 px-4 md:px-20 bg-blue-100 w-full overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* Contact Content */}
-        <div data-aos="fade-right" data-aos-duration="1000">
-          <h2 className="text-4xl font-extrabold mb-6 text-green-400">Let’s Connect</h2>
-          <p className="text-lg mb-6 text-gray-200">
-            Whether you have an idea, a project, or simply want to explore ways to work together towards a greener future,
-            we’d love to hear from you.
-          </p>
-          <form className="grid gap-4">
-  <input
-    type="text"
-    placeholder="Your Name"
-    className="px-4 py-3 rounded-md bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400"
-  />
-  <input
-    type="email"
-    placeholder="Your Email"
-    className="px-4 py-3 rounded-md bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400"
-  />
-  <textarea
-    rows={4}
-    placeholder="Your Message"
-    className="px-4 py-3 rounded-md bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-400"
-  />
-  <button
-    type="submit"
-    className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-md transition"
-  >
-    Send Message
-  </button>
-</form>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-7xl mx-auto text-center mb-12"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold text-blue-700 mb-4">Get in Touch</h2>
+        <p className="text-gray-700 max-w-2xl mx-auto">
+          We’re here to answer your questions, discuss your project ideas, and help you make the transition to clean energy. Whether you're a homeowner, a business, or a public organization — our team is ready to assist you.
+        </p>
+      </motion.div>
 
-        </div>
+      <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        {/* Left: Contact Details and Map */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-white rounded-2xl shadow-md p-6 border border-blue-100"
+        >
+          <h3 className="text-xl font-semibold text-blue-700 mb-4">Contact Information</h3>
+          <ul className="space-y-3 text-gray-800">
+            <li>📍 <strong>Office Address:</strong> F-2, Chandaka Industrial Estate
+              In front of Infocity, Infocity
+              Chandrasekharpur, Bhubaneshwar
+              Odisha - 751024</li>
+            <li>📞 <strong>Phone:</strong> +91 9439173220</li>
+            <li>✉️ <strong>Email:</strong> contact@wwsenergy.in</li>
+            <li>🌐 <strong>Website:</strong> www.wwsenergy.in</li>
+          </ul>
 
-        {/* Google Map Embed */}
-        <div data-aos="fade-left" data-aos-duration="1000" className="w-full h-[400px] rounded-lg overflow-hidden shadow-lg">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.3052843422076!2d85.80342207502332!3d20.33388041064085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19091c30482347%3A0x3f47bd11ec30c71!2sTrident%20Academy%20of%20Technology!5e0!3m2!1sen!2sin!4v1651825094524!5m2!1sen!2sin"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-          ></iframe>
-        </div>
+          <div className="mt-6 rounded-xl overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29483.588774419763!2d85.7879246!3d20.2960585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909c2b1e23ed3%3A0x21dcb45b9fcf07d0!2sTrident%20Academy%20of%20Technology!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              width="100%"
+              height="250"
+              loading="lazy"
+              className="border-none"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </motion.div>
+
+        {/* Right: Contact Form */}
+        <motion.form
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-white rounded-2xl shadow-md p-6 border border-blue-100"
+        >
+          <h3 className="text-xl font-semibold text-blue-700 mb-4">Send Us a Message</h3>
+          <div className="space-y-4">
+            <input
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              placeholder="Your Name"
+              className="w-full p-3 rounded-lg border border-blue-200 focus:outline-none focus:ring-2 focus:ring-green-400"
+              required
+            />
+            <input
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              placeholder="Your Email"
+              type="email"
+              className="w-full p-3 rounded-lg border border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              required
+            />
+            <textarea
+              name="message"
+              value={form.message}
+              onChange={handleChange}
+              placeholder="Your Message"
+              rows={5}
+              className="w-full p-3 rounded-lg border border-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              required
+            />
+            <button
+              type="submit"
+              className="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition w-full"
+            >
+              Submit
+            </button>
+          </div>
+        </motion.form>
       </div>
     </section>
   );
-};
-
-export default ContactSection;
+}
