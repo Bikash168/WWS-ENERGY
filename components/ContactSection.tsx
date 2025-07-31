@@ -19,7 +19,7 @@ export default function ContactPage() {
   return (
     <section
       id="contact"
-      className="relative z-10 py-20 px-4 md:px-20 bg-blue-100 w-full overflow-hidden"
+      className="relative z-10 py-20 px-4 md:px-20 bg-blue-950 w-full overflow-hidden"
     >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -28,7 +28,7 @@ export default function ContactPage() {
         className="max-w-7xl mx-auto text-center mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-bold text-blue-700 mb-4">Get in Touch</h2>
-        <p className="text-gray-700 max-w-2xl mx-auto">
+        <p className="text-white max-w-2xl mx-auto">
           We’re here to answer your questions, discuss your project ideas, and help you make the transition to clean energy. Whether you're a homeowner, a business, or a public organization — our team is ready to assist you.
         </p>
       </motion.div>
