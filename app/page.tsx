@@ -1,10 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import WhatWeDo from "@/components/WhatWeDo"
-import WhatWeThink from "@/components/WhatWeThink";
-import WhoWeAre from '@/components/WhoWeAre';
 import ContactSection from '@/components/ContactSection';
+import AboutUs from "@/components/AboutUs";
+import Services from "@/components/Services";
+import WhyChooseUs from "@/components/WhyChooseUs";
 
 export default function Home() {
   return (
@@ -21,17 +21,16 @@ export default function Home() {
 
       {/* What We Do Section */}
       <section id="about" className="py-20 bg-white px-4 md:px-12 text-center">
-        <WhatWeDo />
+        <AboutUs />
       </section>
 
       {/* What We Think Section */}
-      <section id="think" className="py-20 bg-gray-100 px-4 md:px-12 text-center">
-        <WhatWeThink />
+      <section id="services" className="py-20 bg-gray-100 px-4 md:px-12 text-center">
+        <Services />
       </section>
 
-      {/* Who We Are Section */}
-      <section id="who" className="py-20 bg-white px-4 md:px-12 text-center">
-        <WhoWeAre />
+      <section id="whychooseus" className="py-20 bg-gray-100 px-4 md:px-12 text-center">
+        <WhyChooseUs />
       </section>
 
       {/* Contact Us Section */}

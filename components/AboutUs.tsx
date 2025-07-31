@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 
-export default function WhoWeAre() {
+export default function AboutUs() {
     return (
         <section id="who" className="py-20 bg-white px-4 md:px-12 text-center">
             <motion.div
@@ -17,7 +17,7 @@ export default function WhoWeAre() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1, duration: 0.7 }}
                 >
-                    Who We Are
+                    Powering a Greener Tomorrow
                 </motion.h2>
 
                 <motion.p
@@ -26,9 +26,7 @@ export default function WhoWeAre() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.7 }}
                 >
-                    We are a collective of engineers, innovators, and energy enthusiasts with a singular mission:
-                    to make clean, renewable power accessible and affordable for all. At WWS Energy, we don&apos;t just
-                    work with technology &mdash; we work with purpose.
+                    We are a dedicated renewable energy company working at the intersection of innovation and sustainability. Our mission is to transform the way energy is produced and consumed by tapping into natural sources—wind, water, and sunlight. These elements, often overlooked in conventional energy models, hold the key to building a cleaner, greener, and more reliable energy ecosystem.
                 </motion.p>
 
                 <motion.p
@@ -37,9 +35,7 @@ export default function WhoWeAre() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.7 }}
                 >
-                    Our team is driven by innovation, resilience, and a firm belief that a carbon-free future
-                    isn&apos;t just possible &mdash; it&apos;s essential. Whether it&apos;s harnessing solar, wind, or hydrogen power,
-                    we design systems that are smarter, cleaner, and built for communities that need them most.
+                    With a growing demand for sustainable alternatives, we focus on delivering customized and scalable renewable energy solutions that meet the needs of industries, communities, and institutions alike.
                 </motion.p>
 
 

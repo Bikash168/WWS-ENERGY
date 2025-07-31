@@ -10,10 +10,9 @@ const images = [
   '/people-sustainable-energy.jpg',
 ];
 
-export default function WhatWeThink() {
+export default function Services() {
   const [current, setCurrent] = useState(0);
 
-  // Auto-switch images every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
@@ -23,7 +22,7 @@ export default function WhatWeThink() {
 
   return (
     <section
-      id="think"
+      id="services"
       className="py-20 bg-gradient-to-b from-gray-100 to-white px-4 md:px-12"
     >
       <motion.div
@@ -41,7 +40,7 @@ export default function WhatWeThink() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            What We Think
+            Our Core Focus Areas
           </motion.h2>
 
           <motion.p
@@ -55,16 +54,6 @@ export default function WhatWeThink() {
             by ethics, community, and sustainability.
           </motion.p>
 
-          <motion.blockquote
-            className="bg-white shadow-md rounded-xl px-8 py-6 text-blue-900 text-lg italic flex items-start gap-3"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-          >
-            <FaQuoteLeft className="text-2xl text-blue-600 mt-1" />
-            “The future of energy lies not in extraction, but in harmony — with nature, with people,
-            and with purpose.”
-          </motion.blockquote>
 
           <motion.p
             className="mt-6 text-gray-700 text-base leading-relaxed"
@@ -76,11 +65,40 @@ export default function WhatWeThink() {
             planet. Through innovation and collaboration, we strive to build a better energy future
             — one powered by intention, inclusion, and impact.
           </motion.p>
+
+          {/* Core Focus Areas */}
+          <motion.div
+            className="mt-10 space-y-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+          >
+            <div>
+              <h3 className="text-xl font-semibold text-blue-800 mb-2">Wind Energy</h3>
+              <p className="text-gray-700 leading-relaxed">
+                We harness the kinetic power of wind to generate electricity using high-performance wind turbines. Our wind energy projects are designed for maximum efficiency and minimal environmental impact. Whether onshore or offshore, we deliver reliable systems tailored to local conditions.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-blue-800 mb-2">Hydro Energy</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Water has powered civilizations for centuries. We modernize that potential by developing small- to large-scale hydropower solutions. By converting flowing water into electricity, we provide a clean and consistent energy source that supports both urban and rural power needs.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-blue-800 mb-2">Solar Energy</h3>
+              <p className="text-gray-700 leading-relaxed">
+                As one of the most abundant resources on Earth, sunlight offers vast potential for energy generation. We provide advanced solar PV systems for residential, commercial, and industrial use. From rooftop panels to large-scale solar farms, our systems are engineered for high performance and longevity.
+              </p>
+            </div>
+          </motion.div>
         </div>
 
         {/* Auto-Changing Image Carousel */}
         <motion.div
-          className="w-full relative h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-lg"
+          className="w-full relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-lg"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.7 }}
@@ -104,6 +122,7 @@ export default function WhatWeThink() {
             </motion.div>
           </AnimatePresence>
         </motion.div>
+
       </motion.div>
     </section>
   );

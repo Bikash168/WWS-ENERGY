@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const sections = ['home', 'about', 'think', 'who', 'contact'];
+const sections = ['home', 'about', 'services', 'whychooseus', 'contact'];
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -34,9 +34,9 @@ const Header = () => {
 
     const navLinks = [
         { id: 'home', label: 'Home' },
-        { id: 'about', label: 'What we do' },
-        { id: 'think', label: 'What we think' },
-        { id: 'who', label: 'Who we are' },
+        { id: 'about', label: 'About Us' },
+        { id: 'services', label: 'Services' },
+        { id: 'whychooseus', label: 'Why Choose Us' },
         { id: 'contact', label: 'Contact Us' },
     ];
 
