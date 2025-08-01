@@ -38,7 +38,7 @@ export default function Services() {
           </motion.p>
         </div>
 
-        {/* Energy Boxes */}
+        {/* Energy Cards */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           initial={{ opacity: 0, y: 20 }}
@@ -46,54 +46,60 @@ export default function Services() {
           transition={{ delay: 0.3, duration: 0.6 }}
         >
           {/* Wind Energy */}
-          <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
-            <div className="w-20 h-20 relative mb-4">
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow">
+            <div className="relative w-full h-48">
               <Image
-                src="/wind-energy.png"
+                src="/wind-energy.jpg"
                 alt="Wind Energy"
                 fill
-                className="object-contain"
+                className="object-cover"
+                sizes="100%"
               />
             </div>
-            <h3 className="text-xl font-semibold text-blue-800 mb-2">Wind Energy</h3>
-            <p className="text-gray-700 text-sm leading-relaxed">
-              We harness the kinetic power of wind to generate electricity using high-performance
-              wind turbines. Our wind projects ensure efficiency and minimal environmental impact.
-            </p>
+            <div className="p-6 text-center flex flex-col flex-grow">
+              <h3 className="text-xl font-semibold text-blue-800 mb-2">Wind Energy</h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                We harness the kinetic power of wind to generate electricity using high-performance wind turbines. Our wind energy projects are designed for maximum efficiency and minimal environmental impact. Whether onshore or offshore, we deliver reliable systems tailored to local conditions.
+              </p>
+            </div>
           </div>
 
           {/* Hydro Energy */}
-          <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
-            <div className="w-20 h-20 relative mb-4">
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow">
+            <div className="relative w-full h-48">
               <Image
-                src="/hydro-energy.png"
+                src="/hydro-energy.jpg"
                 alt="Hydro Energy"
                 fill
-                className="object-contain"
+                className="object-cover"
+                sizes="100%"
               />
             </div>
-            <h3 className="text-xl font-semibold text-blue-800 mb-2">Hydro Energy</h3>
-            <p className="text-gray-700 text-sm leading-relaxed">
-              We modernize the power of water by building scalable hydropower solutions, offering a
-              consistent energy source for both urban and rural applications.
-            </p>
+            <div className="p-6 text-center flex flex-col flex-grow">
+              <h3 className="text-xl font-semibold text-blue-800 mb-2">Hydro Energy</h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                Water has powered civilizations for centuries. We modernize that potential by developing small- to large-scale hydropower solutions. By converting flowing water into electricity, we provide a clean and consistent energy source that supports both urban and rural power needs.
+              </p>
+            </div>
           </div>
 
           {/* Solar Energy */}
-          <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
-            <div className="w-20 h-20 relative mb-4">
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow">
+            <div className="relative w-full h-48">
               <Image
-                src="/solar-energy.png"
+                src="/solar-energy.jpg"
                 alt="Solar Energy"
                 fill
-                className="object-contain"
+                className="object-cover"
+                sizes="100%"
               />
             </div>
-            <h3 className="text-xl font-semibold text-blue-800 mb-2">Solar Energy</h3>
-            <p className="text-gray-700 text-sm leading-relaxed">
-              We deliver high-efficiency solar PV systems — from rooftops to solar farms — that
-              convert sunlight into reliable energy for homes, industries, and institutions.
-            </p>
+            <div className="p-6 text-center flex flex-col flex-grow">
+              <h3 className="text-xl font-semibold text-blue-800 mb-2">Solar Energy</h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                As one of the most abundant resources on Earth, sunlight offers vast potential for energy generation. We provide advanced solar PV systems for residential, commercial, and industrial use. From rooftop panels to large-scale solar farms, our systems are engineered for high performance and longevity.
+              </p>
+            </div>
           </div>
         </motion.div>
       </motion.div>
