@@ -34,7 +34,7 @@ export default function ContactPage() {
           Get in Touch
         </h2>
         <p className="text-white max-w-2xl mx-auto text-lg">
-          We’re here to answer your questions, discuss your project ideas, and help you make the transition to clean energy. Whether you're a homeowner, a business, or a public organization — our team is ready to assist you.
+          We are here to answer your questions, discuss your project ideas, and help you make the transition to clean energy. Whether you're a homeowner, a business, or a public organization — our team is ready to assist you.
         </p>
       </motion.div>
 
