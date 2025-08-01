@@ -1,41 +1,24 @@
 'use client';
-import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaQuoteLeft } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const images = [
-  '/clean-energy-thinking.jpg',
-  '/solar-panel-future.jpg',
-  '/people-sustainable-energy.jpg',
-];
-
 export default function Services() {
-  const [current, setCurrent] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section
       id="services"
       className="py-20 bg-gradient-to-b from-gray-100 to-white px-4 md:px-12"
     >
       <motion.div
-        className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center"
+        className="max-w-6xl mx-auto"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        {/* Text Content */}
-        <div>
+        {/* Heading & Intro */}
+        <div className="text-center mb-12">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-blue-900 mb-6 text-center md:text-left"
+            className="text-3xl md:text-4xl font-bold text-blue-900 mb-4"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -44,7 +27,7 @@ export default function Services() {
           </motion.h2>
 
           <motion.p
-            className="text-lg text-gray-700 leading-relaxed mb-6"
+            className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
@@ -53,76 +36,66 @@ export default function Services() {
             energy is not just a breakthrough—it’s a basic human right. Our perspective is driven
             by ethics, community, and sustainability.
           </motion.p>
-
-
-          <motion.p
-            className="mt-6 text-gray-700 text-base leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-          >
-            Our core belief is that equitable energy access can transform lives and protect the
-            planet. Through innovation and collaboration, we strive to build a better energy future
-            — one powered by intention, inclusion, and impact.
-          </motion.p>
-
-          {/* Core Focus Areas */}
-          <motion.div
-            className="mt-10 space-y-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-          >
-            <div>
-              <h3 className="text-xl font-semibold text-blue-800 mb-2">Wind Energy</h3>
-              <p className="text-gray-700 leading-relaxed">
-                We harness the kinetic power of wind to generate electricity using high-performance wind turbines. Our wind energy projects are designed for maximum efficiency and minimal environmental impact. Whether onshore or offshore, we deliver reliable systems tailored to local conditions.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold text-blue-800 mb-2">Hydro Energy</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Water has powered civilizations for centuries. We modernize that potential by developing small- to large-scale hydropower solutions. By converting flowing water into electricity, we provide a clean and consistent energy source that supports both urban and rural power needs.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold text-blue-800 mb-2">Solar Energy</h3>
-              <p className="text-gray-700 leading-relaxed">
-                As one of the most abundant resources on Earth, sunlight offers vast potential for energy generation. We provide advanced solar PV systems for residential, commercial, and industrial use. From rooftop panels to large-scale solar farms, our systems are engineered for high performance and longevity.
-              </p>
-            </div>
-          </motion.div>
         </div>
 
-        {/* Auto-Changing Image Carousel */}
+        {/* Energy Boxes */}
         <motion.div
-          className="w-full relative h-[400px] md:h-[500px] rounded-xl overflow-hidden shadow-lg"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.7 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
         >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={images[current]}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.6 }}
-              className="absolute inset-0"
-            >
+          {/* Wind Energy */}
+          <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+            <div className="w-20 h-20 relative mb-4">
               <Image
-                src={images[current]}
-                alt="Clean energy visuals"
+                src="/wind-energy.png"
+                alt="Wind Energy"
                 fill
-                className="object-cover"
-                priority
+                className="object-contain"
               />
-            </motion.div>
-          </AnimatePresence>
-        </motion.div>
+            </div>
+            <h3 className="text-xl font-semibold text-blue-800 mb-2">Wind Energy</h3>
+            <p className="text-gray-700 text-sm leading-relaxed">
+              We harness the kinetic power of wind to generate electricity using high-performance
+              wind turbines. Our wind projects ensure efficiency and minimal environmental impact.
+            </p>
+          </div>
 
+          {/* Hydro Energy */}
+          <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+            <div className="w-20 h-20 relative mb-4">
+              <Image
+                src="/hydro-energy.png"
+                alt="Hydro Energy"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <h3 className="text-xl font-semibold text-blue-800 mb-2">Hydro Energy</h3>
+            <p className="text-gray-700 text-sm leading-relaxed">
+              We modernize the power of water by building scalable hydropower solutions, offering a
+              consistent energy source for both urban and rural applications.
+            </p>
+          </div>
+
+          {/* Solar Energy */}
+          <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+            <div className="w-20 h-20 relative mb-4">
+              <Image
+                src="/solar-energy.png"
+                alt="Solar Energy"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <h3 className="text-xl font-semibold text-blue-800 mb-2">Solar Energy</h3>
+            <p className="text-gray-700 text-sm leading-relaxed">
+              We deliver high-efficiency solar PV systems — from rooftops to solar farms — that
+              convert sunlight into reliable energy for homes, industries, and institutions.
+            </p>
+          </div>
+        </motion.div>
       </motion.div>
     </section>
   );
